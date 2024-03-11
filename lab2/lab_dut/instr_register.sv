@@ -30,7 +30,7 @@ import instr_register_pkg::*;  // user-defined types are defined in instr_regist
     end
     else if (load_en) begin //adaug switch in functie de opcode
       case (opcode)
-        ZERO: iw_reg[write_pointer] = '{opcode,operand_a,operand_b, {64{1'b0}}};
+        ZERO: iw_reg[write_pointer] = '{opcode,operand_a,operand_b, operand_a};
         PASSA: iw_reg[write_pointer] = '{opcode,operand_a,operand_b, operand_a};
         PASSB: iw_reg[write_pointer] = '{opcode,operand_a,operand_b, operand_b};
         ADD: iw_reg[write_pointer] = '{opcode,operand_a,operand_b, operand_a + operand_b};
