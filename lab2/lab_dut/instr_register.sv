@@ -6,7 +6,7 @@
  *
  **********************************************************************/
 
-module instr_register
+module instr_register //declar modul
 import instr_register_pkg::*;  // user-defined types are defined in instr_register_pkg.sv
 (input  logic          clk,
  input  logic          load_en,
@@ -17,19 +17,29 @@ import instr_register_pkg::*;  // user-defined types are defined in instr_regist
  input  address_t      write_pointer,
  input  address_t      read_pointer,
  output instruction_t  instruction_word
-);
+); //declar semnale; intrarile se vor esantiona, nu pot modifica input
   timeunit 1ns/1ns;
 
   instruction_t  iw_reg [0:31];  // an array of instruction_word structures
 
   // write to the register
-  always@(posedge clk, negedge reset_n)   // write into register
+  always@(posedge clk, negedge reset_n)   // write into register //in () e lista de sensivitati
     if (!reset_n) begin
       foreach (iw_reg[i])
-        iw_reg[i] = '{opc:ZERO,default:0};  // reset to all zeros
+        iw_reg[i] = '{opc:ZERO,default:0};  // reset to all zeros //initializare structuri - default pt celelalte variabile ce raman
     end
-    else if (load_en) begin
-      iw_reg[write_pointer] = '{opcode,operand_a,operand_b};
+    else if (load_en) begin //adaug switch in functie de opcode
+      case (opcode)
+        ZERO: iw_reg[write_pointer] = '{opcode,operand_a,operand_b, {64{1'b0}}};
+        PASSA: iw_reg[write_pointer] = '{opcode,operand_a,operand_b, operand_a};
+        PASSB: iw_reg[write_pointer] = '{opcode,operand_a,operand_b, operand_b};
+        ADD: iw_reg[write_pointer] = '{opcode,operand_a,operand_b, operand_a + operand_b};
+        SUB: iw_reg[write_pointer] = '{opcode,operand_a,operand_b, operand_a - operand_b};
+        MULT: iw_reg[write_pointer] = '{opcode,operand_a,operand_b, operand_a * operand_b};
+        DIV: iw_reg[write_pointer] = '{opcode,operand_a,operand_b, operand_a / operand_b};
+        MOD: iw_reg[write_pointer] = '{opcode,operand_a,operand_b, operand_a % operand_b};
+        default: iw_reg[write_pointer] = '{opc:ZERO,default:0};
+      endcase //la overflow truncheaza valorile; vedem ca wp e pe 5 de biti pt ca avem 32 de elem in array
     end
 
   // read from the register
@@ -42,4 +52,4 @@ initial begin
 end
 `endif
 
-endmodule: instr_register   //letch comuta pe palier 
+endmodule: instr_register
