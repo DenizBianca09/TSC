@@ -36,7 +36,10 @@ import instr_register_pkg::*;  // user-defined types are defined in instr_regist
         ADD: iw_reg[write_pointer] = '{opcode,operand_a,operand_b, operand_a + operand_b};
         SUB: iw_reg[write_pointer] = '{opcode,operand_a,operand_b, operand_a - operand_b};
         MULT: iw_reg[write_pointer] = '{opcode,operand_a,operand_b, operand_a * operand_b};
-        DIV: iw_reg[write_pointer] = '{opcode,operand_a,operand_b, operand_a / operand_b};
+        //DIV: iw_reg[write_pointer] = '{opcode,operand_a,operand_b, operand_a / operand_b}; modif 11 martie BI
+        DIV: if (operand_b == 0) 
+                iw_reg[write_pointer] = '{opcode,operand_a,operand_b,'b0};
+              else iw_reg[write_pointer] = '{opcode,operand_a,operand_b, operand_a / operand_b};
         MOD: iw_reg[write_pointer] = '{opcode,operand_a,operand_b, operand_a % operand_b};
         default: iw_reg[write_pointer] = '{opc:ZERO,default:0};
       endcase //la overflow truncheaza valorile; vedem ca wp e pe 5 de biti pt ca avem 32 de elem in array
