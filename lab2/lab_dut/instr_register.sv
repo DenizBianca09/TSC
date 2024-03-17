@@ -45,7 +45,7 @@ import instr_register_pkg::*;  // user-defined types are defined in instr_regist
       endcase //la overflow truncheaza valorile; vedem ca wp e pe 5 de biti pt ca avem 32 de elem in array
     end
 
-  // read from the register
+  // read from the reg
   assign instruction_word = iw_reg[read_pointer];  // continuously read from register
 
 // compile with +define+FORCE_LOAD_ERROR to inject a functional bug for verification to catch
