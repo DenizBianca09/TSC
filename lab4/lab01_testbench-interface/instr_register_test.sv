@@ -109,7 +109,7 @@ module instr_register_test
     $display("  rezultat = %0d\n", instruction_word.rezultat);
   endfunction: print_results
 
-function void check_result
+function void check_result;
 //functie check register if-else in loc de case si la final facem un if care se faca comparatia intre 
 //rezultatul calculat de noi si cel primit, functia nu returneaza nimic, este void
 result_t exp_result; // variabila locals pentru stocarea rezultatului asteptat
@@ -128,10 +128,10 @@ case (iw_reg_test[read_pointer].opc)
 endcase
 
   // verificam daca rezultatul calculat corespunde cu cel primit de la DUT
-if (exp_result === received_result) begin
-  $display("Check PASSED: Calculated result matches DUT result. Opcode: %s, OpA: %0d, OpB: %0d, Expected Result: %0d", opcode.name, op_a, op_b, exp_result);
+if (exp_result == instruction_word.rezultat) begin
+  $display("Check PASSED: Calculated result matches DUT result. Opcode: %s, OpA: %0d, OpB: %0d, Expected Result: %0d", instruction_word.opc.name, instruction_word.op_a, instruction_word.op_b, exp_result);
 end else begin
-  $display("Check FAILED: Mismatch between calculated and DUT result. Opcode: %s, OpA: %0d, OpB: %0d, Expected: %0d, Received: %0d", opcode.name, op_a, op_b, exp_result, received_result);
+  $display("Check FAILED: Mismatch between calculated and DUT result. Opcode: %s, OpA: %0d, OpB: %0d, Expected: %0d, Received: %0d", instruction_word.opc.name, instruction_word.op_a, instruction_word.op_b, exp_result, instruction_word.rezultat);
 end
 endfunction: check_result
 
