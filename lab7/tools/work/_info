@@ -1,0 +1,112 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Bya/Desktop/TSC_Lab/TSC/lab7/tools
+vinstr_register
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 DXx4 work 18 instr_register_pkg 0 22 VZmd3j>kEdYR:6o5X@B>G2
+Z3 !s110 1712555574
+!i10b 1
+!s100 WN8d7hhGaC]olciU;61742
+I6dCN;E?d1=jEWedE`f_Re0
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+!s105 instr_register_sv_unit
+S1
+R0
+w1711521685
+8../lab_dut/instr_register.sv
+F../lab_dut/instr_register.sv
+L0 9
+Z5 OV;L;10.5c;63
+r1
+!s85 0
+31
+Z6 !s108 1712555574.000000
+Z7 !s107 ../lab01_testbench-interface/top.sv|../lab01_testbench-interface/instr_register_test.sv|../lab_dut/instr_register.sv|../lab_dut/instr_register_pkg.sv|
+Z8 !s90 -reportprogress|300|-sv|-timescale|1ps/1ps|-work|work|-f|sources.txt|
+!i113 1
+Z9 o-sv -timescale 1ps/1ps -work work
+Z10 !s92 -sv -timescale 1ps/1ps -work work +incdir+../../lab_dut +incdir+../../lab_dut +incdir+../lab01_testbench-interface +incdir+../lab01_testbench-interface
+Z11 tCvgOpt 0
+Xinstr_register_pkg
+R1
+R3
+!i10b 1
+!s100 KCaMjcghkV7@;UTa^e7F60
+IVZmd3j>kEdYR:6o5X@B>G2
+VVZmd3j>kEdYR:6o5X@B>G2
+S1
+R0
+w1711521688
+8../lab_dut/instr_register_pkg.sv
+F../lab_dut/instr_register_pkg.sv
+L0 5
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+R10
+R11
+vinstr_register_test
+R1
+R2
+R3
+!i10b 1
+!s100 ne:N_]B>GlI0S[PUF[B?>0
+ImU]:aK80hkK9<f@R`ITaO0
+R4
+!s105 instr_register_test_sv_unit
+S1
+R0
+w1712555026
+8../lab01_testbench-interface/instr_register_test.sv
+F../lab01_testbench-interface/instr_register_test.sv
+L0 8
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+R10
+R11
+vtop
+R1
+R2
+R3
+!i10b 1
+!s100 PK_W450MV<B?5IPK6MRkE3
+IoDc]2;AhP3[>T97`a8VHJ1
+R4
+!s105 top_sv_unit
+S1
+R0
+w1709538566
+8../lab01_testbench-interface/top.sv
+F../lab01_testbench-interface/top.sv
+L0 5
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+R10
+R11

@@ -1,0 +1,17 @@
+# Current time Mon Apr 08 08:52:59 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vsim
+# Id = "10.5c"
+# Version = "2017.01"
+# Date = "Jan 23 2017"
+# Platform = win32pe
+# Signature = 5e7f9b833961c34eb19f3225262e3a77
+# 0    0x7a641d5c: 'isleadbyte_l + 0x1a' in 'c:\windows\system32\msvcr120.dll'
+# 1    0x7a646d5d: 'fdopen + 0xa73' in 'c:\windows\system32\msvcr120.dll'
+# 2    0x7a6b480f: 'vfprintf + 0xfd' in 'c:\windows\system32\msvcr120.dll'
+# 3    0x7a6b472a: 'vfprintf + 0x18' in 'c:\windows\system32\msvcr120.dll'
+# 4    0x012997fd: '<unknown (@0x12997fd)>'
+# 5    0x00b96eee: '<unknown (@0xb96eee)>'
+# End of Stack Trace
+
+

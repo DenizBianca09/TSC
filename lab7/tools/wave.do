@@ -15,9 +15,13 @@ add wave -noupdate /top/test/tests_passed
 add wave -noupdate /top/test/tests_failed
 add wave -noupdate /top/test/seed
 add wave -noupdate /top/test/iw_reg_test
+add wave -noupdate /top/test/RD_NR
+add wave -noupdate /top/test/WRITE_NR
+add wave -noupdate /top/test/WR_ORDER
+add wave -noupdate /top/test/RD_ORDER
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {0 ns} 0}
-quietly wave cursor active 0
+quietly wave cursor active 1
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 82
 configure wave -justifyvalue left

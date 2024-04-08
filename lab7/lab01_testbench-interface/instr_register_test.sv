@@ -25,6 +25,9 @@ module instr_register_test
   
   parameter RD_NR = 31;
   parameter WRITE_NR = 20;
+  parameter WR_ORDER = 0; // 0 -> inc, 1 -> random, 2 -> dec
+  parameter RD_ORDER = 0;
+  //parameter TEST_SG
 
   int seed = 555;
   instruction_t iw_reg_test [0:31];
@@ -32,7 +35,7 @@ module instr_register_test
   // Initial block
   initial begin
     $display("\n\n***********************************************************");
-    $display("***  THIS IS NOT A SELF-CHECKING TESTBENCH (YET).  YOU  ***");
+    $display("***  THIS IS A SELF-CHECKING TESTBENCH.  YOU  ***");
     $display("***  NEED TO VISUALLY VERIFY THAT THE OUTPUT VALUES     ***");
     $display("***  MATCH THE INPUT VALUES FOR EACH REGISTER LOCATION  ***");
     $display("***********************************************************");
@@ -69,7 +72,7 @@ module instr_register_test
     $display("Total tests failed: %0d", tests_failed);
 
     $display("\n***********************************************************");
-    $display("***  THIS IS NOT A SELF-CHECKING TESTBENCH (YET).  YOU  ***");
+    $display("***  THIS IS A SELF-CHECKING TESTBENCH.  YOU  ***");
     $display("***  NEED TO VISUALLY VERIFY THAT THE OUTPUT VALUES     ***");
     $display("***  MATCH THE INPUT VALUES FOR EACH REGISTER LOCATION  ***");
     $display("***********************************************************\n");
@@ -152,6 +155,10 @@ module instr_register_test
     $display("Total tests failed: %0d", tests_failed);
   end
 
+  //aici un fopen ("..reports/regression...")
+  //$display ("Denumirea testului luata din %")
+  //ori facem aici, ori facem o alta functie
+  //cand rulam toata regresia, in regression_status ar trebui sa avem denumirea testului si pass sau fail
   // Function to save data to instruction register
   function void save_data;
     iw_reg_test[write_pointer] = {opcode, operand_a, operand_b, 'b0};
