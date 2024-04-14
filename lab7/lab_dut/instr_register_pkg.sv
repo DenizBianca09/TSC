@@ -26,7 +26,7 @@ package instr_register_pkg;
     opcode_t  opc;
     operand_t op_a;
     operand_t op_b; //adaug rezultat
-    result_t rezultat;
+    result_t exp_result;
   } instruction_t; // opc este pe 4 biti, op_a si op_b sunt pe 32 de biti deci in total avel 68 de biti
 
 endpackage: instr_register_pkg

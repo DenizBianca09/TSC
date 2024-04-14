@@ -23,14 +23,18 @@ module instr_register_test
   int tests_passed = 0;
   int tests_failed = 0;
   
-  parameter RD_NR = 31;
-  parameter WRITE_NR = 20;
+  parameter RD_NR = 3;
+  parameter WRITE_NR = 3;
   parameter WR_ORDER = 0; // 0 -> inc, 1 -> random, 2 -> dec
   parameter RD_ORDER = 0;
-  //parameter TEST_SG
+  parameter NAME_OF_TEST;
+
+  instruction_t iw_reg [0:31];
+  instruction_t iw_reg_test [0:31]; 
 
   int seed = 555;
-  instruction_t iw_reg_test [0:31];
+  int pass = 0;
+  int fail = 0;
 
   // Initial block
   initial begin
@@ -61,15 +65,20 @@ module instr_register_test
 
     // Reading back the same register locations written
     $display("\nReading back the same register locations written...");
-    for (int i=0; i<=RD_NR; i++) begin
-      @(posedge clk) read_pointer = i;
+    for (int i=0; i<RD_NR; i++) begin
+      //@(posedge clk) read_pointer = i;
+      @(posedge clk) case (RD_ORDER)
+        0: read_pointer = i;
+        1: read_pointer = ($unsigned($random)%32);
+        2: read_pointer = 31 - (i % 32);
+     endcase 
       @(negedge clk) print_results;
       check_result;
     end
 
-    // Display total tests passed and failed
-    $display("\nTotal tests passed: %0d", tests_passed);
-    $display("Total tests failed: %0d", tests_failed);
+    write_file;
+
+    final_report;
 
     $display("\n***********************************************************");
     $display("***  THIS IS A SELF-CHECKING TESTBENCH.  YOU  ***");
@@ -83,26 +92,28 @@ module instr_register_test
 
   // Randomize transaction function
   function void randomize_transaction;
-    static int temp = 0; 
-    operand_a = $random(seed) % 16;                 
-    operand_b = $unsigned($random) % 16;            
-    opcode = opcode_t'($unsigned($random) % 8);  
-    case (temp % 3)
-        0: begin
-            write_pointer = temp % 32;
-            read_pointer = temp % 32;
-        end
-        1: begin
-            write_pointer = $random(seed) % 32;
-            read_pointer = $random(seed) % 32;
-        end
-        2: begin
-            write_pointer = 31 - (temp % 32);
-            read_pointer = 31 - (temp % 32);
-        end
-    endcase
-    temp++;
-  endfunction
+  static int temp = 0;
+  operand_a = $random(seed) % 16;                 
+  operand_b = $unsigned($random) % 16;            
+  opcode = opcode_t'($unsigned($random) % 8);  
+
+  case (temp % 3)
+    0: begin
+      write_pointer = (WR_ORDER == 2) ? 31 - (temp % 32) : temp % 32;
+      read_pointer = (WR_ORDER == 2) ? 31 - (temp % 32) : temp % 32;
+    end
+    1: begin
+      write_pointer = (WR_ORDER == 1) ? $random(seed) % 32 : temp % 32;
+      read_pointer = (WR_ORDER == 1) ? $random(seed) % 32 : temp % 32;
+    end
+    2: begin
+      write_pointer = (WR_ORDER == 2) ? 31 - (temp % 32) : temp % 32;
+      read_pointer = (WR_ORDER == 2) ? 31 - (temp % 32) : temp % 32;
+    end
+  endcase
+
+  temp++;
+  endfunction:randomize_transaction
 
   // Print transaction function
   function void print_transaction;
@@ -110,7 +121,7 @@ module instr_register_test
     $display("  opcode = %0d (%s)", opcode, opcode.name);
     $display("  operand_a = %0d", operand_a);
     $display("  operand_b = %0d\n", operand_b);
-  endfunction
+  endfunction: print_transaction
 
   // Print results function
   function void print_results;
@@ -118,7 +129,7 @@ module instr_register_test
     $display("  opcode = %0d (%s)", instruction_word.opc, instruction_word.opc.name);
     $display("  operand_a = %0d", instruction_word.op_a);
     $display("  operand_b = %0d\n", instruction_word.op_b);
-    $display("  rezultat = %0d\n", instruction_word.rezultat);
+    $display(" exp_result = %0d\n", instruction_word.exp_result);
   endfunction
 
   // Check result function
@@ -132,28 +143,55 @@ module instr_register_test
       ADD: exp_result = iw_reg_test[read_pointer].op_a + iw_reg_test[read_pointer].op_b;
       SUB: exp_result = iw_reg_test[read_pointer].op_a - iw_reg_test[read_pointer].op_b;
       MULT: exp_result = iw_reg_test[read_pointer].op_a * iw_reg_test[read_pointer].op_b;
-      DIV: exp_result = (iw_reg_test[read_pointer].op_b != 0) ? iw_reg_test[read_pointer].op_a / iw_reg_test[read_pointer].op_b : 'x;
+      DIV: if (iw_reg_test[read_pointer].op_b == {32{1'b0}})
+               exp_result = {64{1'b0}}; 
+             else
+               exp_result = iw_reg_test[read_pointer].op_a / iw_reg_test[read_pointer].op_b;
       MOD: exp_result = iw_reg_test[read_pointer].op_a % iw_reg_test[read_pointer].op_b;
-      default: exp_result = 'x;
+      default: exp_result = {64{1'b0}};
     endcase
 
-    if (exp_result == instruction_word.rezultat) begin
-      $display("Check PASSED: Calculated result matches DUT result. Opcode: %s, OpA: %0d, OpB: %0d, Expected Result: %0d", instruction_word.opc.name, instruction_word.op_a, instruction_word.op_b, exp_result);
-      tests_passed++;
-    end else begin
-      $display("Check FAILED: Mismatch between calculated and DUT result. Opcode: %s, OpA: %0d, OpB: %0d, Expected: %0d, Received: %0d", instruction_word.opc.name, instruction_word.op_a, instruction_word.op_b, exp_result, instruction_word.rezultat);
-      tests_failed++;
-    end
-    // Afisare numar teste trecute si picate la fiecare verificare
-    $display("Total tests passed: %0d", tests_passed);
-    $display("Total tests failed: %0d", tests_failed);
-  endfunction
+    // Display the check result
+    $display("\nVerification Result:");
+    $display("  Read Pointer: %0d", read_pointer);
+    $display("  Opcode: %0d (%s)", iw_reg_test[read_pointer].opc, iw_reg_test[read_pointer].opc.name);
+    $display("  Operand A: %0d", iw_reg_test[read_pointer].op_a);
+    $display("  Operand B: %0d", iw_reg_test[read_pointer].op_b);
+    $display("\nCalculated Result: %0d", exp_result);
 
-  // Initial block to print total tests passed and failed
-  initial begin
-    $display("Total tests passed: %0d", tests_passed);
-    $display("Total tests failed: %0d", tests_failed);
-  end
+    // Check if the opcode, operands, and result match the expected values
+    if (iw_reg_test[read_pointer].opc === instruction_word.opc) 
+        $display("Matching Opcode!");
+    else
+        $display("Mismatching Opcode!");
+
+    if (iw_reg_test[read_pointer].op_a === instruction_word.op_a) 
+        $display("Matching Operand A!");
+    else
+        $display("Mismatching Operand A!");
+
+    if (iw_reg_test[read_pointer].op_b === instruction_word.op_b) 
+        $display("Matching Operand B!");
+    else
+        $display("Mismatching Operand B!");
+
+    if (exp_result === instruction_word.exp_result) 
+        $display("Matching Results!");
+    else 
+        $display("Mismatching Results!");
+
+    // Check if the test passed or failed
+    if (iw_reg_test[read_pointer].opc === instruction_word.opc && 
+        iw_reg_test[read_pointer].op_a === instruction_word.op_a && 
+        iw_reg_test[read_pointer].op_b === instruction_word.op_b && 
+        exp_result === instruction_word.exp_result) begin
+        $display("TEST PASSED");
+        pass = pass + 1; 
+    end else begin
+        $display("TEST FAILED");
+        fail = fail + 1; 
+    end
+  endfunction: check_result
 
   //aici un fopen ("..reports/regression...")
   //$display ("Denumirea testului luata din %")
@@ -161,8 +199,57 @@ module instr_register_test
   //cand rulam toata regresia, in regression_status ar trebui sa avem denumirea testului si pass sau fail
   // Function to save data to instruction register
   function void save_data;
-    iw_reg_test[write_pointer] = {opcode, operand_a, operand_b, 'b0};
-  endfunction
+  iw_reg_test[write_pointer].opc = opcode;
+  iw_reg_test[write_pointer].op_a = operand_a;
+  iw_reg_test[write_pointer].op_b = operand_b;
+  iw_reg_test[write_pointer].exp_result = 1'b0; // Or whatever the default should be
+  endfunction: save_data
 
-endmodule
+
+  function void final_report;
+    real pass_percentage;
+    real fail_percentage;
+
+    pass_percentage = (pass * 100.0) / WRITE_NR;
+    fail_percentage = (fail * 100.0) / WRITE_NR;
+
+    $display("\n-------- Test Summary --------");
+    $display("Total number of tests: %0d", WRITE_NR);
+    $display("Number of failed tests: %0d", fail);
+    $display("Number of passed tests: %0d", pass);
+    $display("Pass percentage: %.2f%%", pass_percentage);
+    $display("Fail percentage: %.2f%%", fail_percentage);
+
+    // Afisare raport succinte bazat pe procentajele de trecere/esuare
+    if (pass_percentage >= 90.0)
+        $display("Overall Status: Excellent");
+    else if (pass_percentage >= 80.0)
+        $display("Overall Status: Very Good");
+    else if (pass_percentage >= 70.0)
+        $display("Overall Status: Good");
+    else if (pass_percentage >= 60.0)
+        $display("Overall Status: Satisfactory");
+    else if (pass_percentage >= 50.0)
+        $display("Overall Status: Average");
+    else
+        $display("Overall Status: Needs Improvement");
+
+    $display("-------------------------------");
+endfunction: final_report
+
+function void write_file;
+  int fd;
+
+  fd = $fopen("../reports/regression_transcript/regression_status.txt", "a");
+  if (pass == WRITE_NR) begin
+    $fdisplay(fd, "%s : passed", NAME_OF_TEST);
+  end
+  else begin
+    $fdisplay(fd, "%s : failed", NAME_OF_TEST);
+  end
+
+  $fclose(fd);
+endfunction: write_file
+
+endmodule: instr_register_test
 

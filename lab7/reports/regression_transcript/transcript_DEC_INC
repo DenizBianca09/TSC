@@ -1,20 +1,19 @@
 # 1
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
-# Start time: 09:23:00 on Apr 08,2024
+# Start time: 00:06:39 on Apr 15,2024
 # vlog -sv -timescale 1ps/1ps -work work -f sources.txt 
 # -- Compiling package instr_register_pkg
 # -- Compiling module instr_register
 # -- Importing package instr_register_pkg
 # -- Compiling module instr_register_test
-# ** Note: ../lab01_testbench-interface/instr_register_test.sv(159): (vlog-13177) Promoting concatenation '{opcode,operand_a,operand_b,...}' to an assignment pattern:  Unsized literal found.
 # -- Compiling module top
 # 
 # Top level modules:
 # 	top
-# End time: 09:23:00 on Apr 08,2024, Elapsed time: 0:00:00
+# End time: 00:06:39 on Apr 15,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim -novopt -quiet -nocoverage "+notimingchecks" "+nowarnTSCALE" -sva top -GWR_ORDER=2 -GRD_ORDER=1 -GRD_NR=30 -GWRITE_NR=50 
-# Start time: 09:23:00 on Apr 08,2024
+# vsim -novopt -quiet -nocoverage "+notimingchecks" "+nowarnTSCALE" -sva top -GNAME_OF_TEST=DEC_INC -GWR_ORDER=2 -GRD_ORDER=0 -GRD_NR=40 -GWRITE_NR=40 
+# Start time: 00:06:39 on Apr 15,2024
 # 
 # 
 # ***********************************************************
@@ -24,575 +23,1019 @@
 # ***********************************************************
 # 
 # Reseting the instruction register...
-# Total tests passed: 0
-# Total tests failed: 0
 # 
 # Writing values to register stack...
-# Writing to register location 0: 
+# Writing to register location 31: 
 #   opcode = 1 (PASSA)
 #   operand_a = -12
 #   operand_b = 7
 # 
-# Writing to register location 17: 
+# Writing to register location 1: 
 #   opcode = 0 (ZERO)
 #   operand_a = -9
 #   operand_b = 1
 # 
 # Writing to register location 29: 
+#   opcode = 7 (MOD)
+#   operand_a = -15
+#   operand_b = 8
+# 
+# Writing to register location 28: 
+#   opcode = 5 (MULT)
+#   operand_a = -8
+#   operand_b = 7
+# 
+# Writing to register location 4: 
 #   opcode = 3 (ADD)
 #   operand_a = -9
 #   operand_b = 5
 # 
-# Writing to register location 3: 
+# Writing to register location 26: 
 #   opcode = 4 (SUB)
 #   operand_a = 5
 #   operand_b = 3
 # 
-# Writing to register location 28: 
+# Writing to register location 25: 
 #   opcode = 3 (ADD)
 #   operand_a = 3
 #   operand_b = 12
 # 
-# Writing to register location 26: 
+# Writing to register location 7: 
+#   opcode = 6 (DIV)
+#   operand_a = 12
+#   operand_b = 3
+# 
+# Writing to register location 23: 
+#   opcode = 1 (PASSA)
+#   operand_a = 3
+#   operand_b = 14
+# 
+# Writing to register location 22: 
 #   opcode = 1 (PASSA)
 #   operand_a = -2
 #   operand_b = 9
 # 
-# Writing to register location 6: 
+# Writing to register location 10: 
 #   opcode = 7 (MOD)
 #   operand_a = 9
 #   operand_b = 9
 # 
-# Writing to register location 7: 
+# Writing to register location 20: 
 #   opcode = 3 (ADD)
 #   operand_a = 9
 #   operand_b = 7
 # 
-# Writing to register location 23: 
+# Writing to register location 19: 
+#   opcode = 5 (MULT)
+#   operand_a = 7
+#   operand_b = 3
+# 
+# Writing to register location 13: 
+#   opcode = 7 (MOD)
+#   operand_a = 3
+#   operand_b = 5
+# 
+# Writing to register location 17: 
 #   opcode = 0 (ZERO)
 #   operand_a = -11
 #   operand_b = 15
 # 
-# Writing to register location 9: 
+# Writing to register location 16: 
 #   opcode = 6 (DIV)
 #   operand_a = 15
 #   operand_b = 0
 # 
-# Writing to register location 14: 
+# Writing to register location 16: 
 #   opcode = 4 (SUB)
 #   operand_a = 0
 #   operand_b = 14
 # 
-# Writing to register location 20: 
+# Writing to register location 14: 
+#   opcode = 3 (ADD)
+#   operand_a = -2
+#   operand_b = 4
+# 
+# Writing to register location 13: 
+#   opcode = 0 (ZERO)
+#   operand_a = -12
+#   operand_b = 3
+# 
+# Writing to register location 19: 
 #   opcode = 4 (SUB)
 #   operand_a = -13
 #   operand_b = 8
 # 
-# Writing to register location 12: 
+# Writing to register location 11: 
 #   opcode = 1 (PASSA)
 #   operand_a = -8
 #   operand_b = 12
 # 
-# Writing to register location 1: 
+# Writing to register location 10: 
 #   opcode = 1 (PASSA)
 #   operand_a = -4
 #   operand_b = 1
 # 
-# Writing to register location 17: 
+# Writing to register location 22: 
+#   opcode = 1 (PASSA)
+#   operand_a = -15
+#   operand_b = 1
+# 
+# Writing to register location 8: 
+#   opcode = 7 (MOD)
+#   operand_a = 1
+#   operand_b = 1
+# 
+# Writing to register location 7: 
 #   opcode = 5 (MULT)
 #   operand_a = 1
 #   operand_b = 15
 # 
-# Writing to register location 15: 
+# Writing to register location 25: 
 #   opcode = 7 (MOD)
 #   operand_a = -1
 #   operand_b = 5
 # 
-# Writing to register location 7: 
+# Writing to register location 5: 
 #   opcode = 4 (SUB)
 #   operand_a = 5
 #   operand_b = 7
 # 
-# Writing to register location 14: 
+# Writing to register location 4: 
+#   opcode = 4 (SUB)
+#   operand_a = -9
+#   operand_b = 4
+# 
+# Writing to register location 28: 
+#   opcode = 5 (MULT)
+#   operand_a = 4
+#   operand_b = 12
+# 
+# Writing to register location 2: 
 #   opcode = 3 (ADD)
 #   operand_a = 12
 #   operand_b = 5
 # 
-# Writing to register location 18: 
+# Writing to register location 1: 
 #   opcode = 4 (SUB)
 #   operand_a = -11
 #   operand_b = 11
 # 
-# Writing to register location 12: 
+# Writing to register location 31: 
 #   opcode = 0 (ZERO)
 #   operand_a = 11
 #   operand_b = 12
 # 
-# Writing to register location 11: 
+# Writing to register location 31: 
+#   opcode = 2 (PASSB)
+#   operand_a = -4
+#   operand_b = 8
+# 
+# Writing to register location 30: 
+#   opcode = 2 (PASSB)
+#   operand_a = 8
+#   operand_b = 10
+# 
+# Writing to register location 2: 
 #   opcode = 6 (DIV)
 #   operand_a = -6
 #   operand_b = 2
 # 
-# Writing to register location 21: 
+# Writing to register location 28: 
 #   opcode = 1 (PASSA)
 #   operand_a = 2
 #   operand_b = 14
 # 
-# Writing to register location 9: 
+# Writing to register location 27: 
 #   opcode = 4 (SUB)
 #   operand_a = 14
 #   operand_b = 9
 # 
-# Writing to register location 8: 
-#   opcode = 5 (MULT)
-#   operand_a = -9
-#   operand_b = 1
-# 
-# Writing to register location 24: 
-#   opcode = 6 (DIV)
-#   operand_a = -15
-#   operand_b = 13
-# 
-# Writing to register location 22: 
-#   opcode = 3 (ADD)
-#   operand_a = -3
-#   operand_b = 6
-# 
 # Writing to register location 5: 
 #   opcode = 7 (MOD)
-#   operand_a = 11
-#   operand_b = 1
-# 
-# Writing to register location 27: 
-#   opcode = 5 (MULT)
-#   operand_a = -15
-#   operand_b = 15
-# 
-# Writing to register location 13: 
-#   opcode = 1 (PASSA)
-#   operand_a = 15
-#   operand_b = 13
-# 
-# Writing to register location 2: 
-#   opcode = 6 (DIV)
-#   operand_a = 15
-#   operand_b = 0
-# 
-# Writing to register location 30: 
-#   opcode = 7 (MOD)
-#   operand_a = 0
-#   operand_b = 6
-# 
-# Writing to register location 15: 
-#   opcode = 3 (ADD)
-#   operand_a = 6
-#   operand_b = 15
-# 
-# Writing to register location 31: 
-#   opcode = 5 (MULT)
-#   operand_a = -3
-#   operand_b = 7
-# 
-# Writing to register location 1: 
-#   opcode = 0 (ZERO)
-#   operand_a = -9
-#   operand_b = 13
-# 
-# Writing to register location 24: 
-#   opcode = 2 (PASSB)
-#   operand_a = 13
-#   operand_b = 8
-# 
-# Writing to register location 28: 
-#   opcode = 1 (PASSA)
-#   operand_a = -8
-#   operand_b = 2
-# 
-# Writing to register location 4: 
-#   opcode = 1 (PASSA)
-#   operand_a = 2
-#   operand_b = 1
-# 
-# Writing to register location 25: 
-#   opcode = 5 (MULT)
-#   operand_a = -15
-#   operand_b = 9
-# 
-# Writing to register location 25: 
-#   opcode = 5 (MULT)
-#   operand_a = 1
-#   operand_b = 14
-# 
-# Writing to register location 7: 
-#   opcode = 6 (DIV)
-#   operand_a = -2
-#   operand_b = 13
-# 
-# Writing to register location 30: 
-#   opcode = 4 (SUB)
-#   operand_a = -3
-#   operand_b = 14
-# 
-# Writing to register location 22: 
-#   opcode = 3 (ADD)
-#   operand_a = -11
-#   operand_b = 1
-# 
-# Writing to register location 10: 
-#   opcode = 4 (SUB)
-#   operand_a = 1
-#   operand_b = 11
-# 
-# Writing to register location 28: 
-#   opcode = 5 (MULT)
-#   operand_a = -5
+#   operand_a = -7
 #   operand_b = 12
 # 
-# Writing to register location 19: 
-#   opcode = 0 (ZERO)
-#   operand_a = -9
-#   operand_b = 13
+# Writing to register location 25: 
+#   opcode = 1 (PASSA)
+#   operand_a = 12
+#   operand_b = 7
 # 
-# Writing to register location 13: 
-#   opcode = 6 (DIV)
-#   operand_a = 13
-#   operand_b = 0
-# 
-# Writing to register location 30: 
-#   opcode = 4 (SUB)
-#   operand_a = 0
-#   operand_b = 14
-# 
-# Writing to register location 16: 
+# Writing to register location 24: 
 #   opcode = 5 (MULT)
-#   operand_a = -14
-#   operand_b = 15
-# 
-# Writing to register location 16: 
-#   opcode = 0 (ZERO)
-#   operand_a = 15
-#   operand_b = 13
-# 
-# Writing to register location 0: 
-#   opcode = 2 (PASSB)
-#   operand_a = 13
-#   operand_b = 0
+#   operand_a = -9
+#   operand_b = 1
 # 
 # 
 # Reading back the same register locations written...
 # Read from register location 0: 
-#   opcode = 2 (PASSB)
-#   operand_a = 13
-#   operand_b = 0
+#   opcode = x ()
+#   operand_a = x
+#   operand_b = x
 # 
-#   rezultat = 0
+#  exp_result = 0
 # 
-# Check PASSED: Calculated result matches DUT result. Opcode: PASSB, OpA: 13, OpB: 0, Expected Result: 0
-# Total tests passed: 1
-# Total tests failed: 0
+# 
+# Verification Result:
+#   Read Pointer: 0
+#   Opcode: x ()
+#   Operand A: x
+#   Operand B: x
+# 
+# Calculated Result: 0
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
 # Read from register location 1: 
-#   opcode = 0 (ZERO)
-#   operand_a = -9
-#   operand_b = 13
-# 
-#   rezultat = -9
-# 
-# Check FAILED: Mismatch between calculated and DUT result. Opcode: ZERO, OpA: -9, OpB: 13, Expected: 0, Received: -9
-# Total tests passed: 1
-# Total tests failed: 1
-# Read from register location 2: 
-#   opcode = 6 (DIV)
-#   operand_a = 15
-#   operand_b = 0
-# 
-#   rezultat = 0
-# 
-# Check FAILED: Mismatch between calculated and DUT result. Opcode: DIV, OpA: 15, OpB: 0, Expected: x, Received: 0
-# Total tests passed: 1
-# Total tests failed: 2
-# Read from register location 3: 
 #   opcode = 4 (SUB)
-#   operand_a = 5
-#   operand_b = 3
-# 
-#   rezultat = 2
-# 
-# Check PASSED: Calculated result matches DUT result. Opcode: SUB, OpA: 5, OpB: 3, Expected Result: 2
-# Total tests passed: 2
-# Total tests failed: 2
-# Read from register location 4: 
-#   opcode = 1 (PASSA)
-#   operand_a = 2
-#   operand_b = 1
-# 
-#   rezultat = 2
-# 
-# Check PASSED: Calculated result matches DUT result. Opcode: PASSA, OpA: 2, OpB: 1, Expected Result: 2
-# Total tests passed: 3
-# Total tests failed: 2
-# Read from register location 5: 
-#   opcode = 7 (MOD)
-#   operand_a = 11
-#   operand_b = 1
-# 
-#   rezultat = 0
-# 
-# Check PASSED: Calculated result matches DUT result. Opcode: MOD, OpA: 11, OpB: 1, Expected Result: 0
-# Total tests passed: 4
-# Total tests failed: 2
-# Read from register location 6: 
-#   opcode = 7 (MOD)
-#   operand_a = 9
-#   operand_b = 9
-# 
-#   rezultat = 0
-# 
-# Check PASSED: Calculated result matches DUT result. Opcode: MOD, OpA: 9, OpB: 9, Expected Result: 0
-# Total tests passed: 5
-# Total tests failed: 2
-# Read from register location 7: 
-#   opcode = 6 (DIV)
-#   operand_a = -2
-#   operand_b = 13
-# 
-#   rezultat = 0
-# 
-# Check FAILED: Mismatch between calculated and DUT result. Opcode: DIV, OpA: -2, OpB: 13, Expected: 330382099, Received: 0
-# Total tests passed: 5
-# Total tests failed: 3
-# Read from register location 8: 
-#   opcode = 5 (MULT)
-#   operand_a = -9
-#   operand_b = 1
-# 
-#   rezultat = -9
-# 
-# Check PASSED: Calculated result matches DUT result. Opcode: MULT, OpA: -9, OpB: 1, Expected Result: -9
-# Total tests passed: 6
-# Total tests failed: 3
-# Read from register location 9: 
-#   opcode = 4 (SUB)
-#   operand_a = 14
-#   operand_b = 9
-# 
-#   rezultat = 5
-# 
-# Check PASSED: Calculated result matches DUT result. Opcode: SUB, OpA: 14, OpB: 9, Expected Result: 5
-# Total tests passed: 7
-# Total tests failed: 3
-# Read from register location 10: 
-#   opcode = 4 (SUB)
-#   operand_a = 1
+#   operand_a = -11
 #   operand_b = 11
 # 
-#   rezultat = -10
+#  exp_result = -22
 # 
-# Check PASSED: Calculated result matches DUT result. Opcode: SUB, OpA: 1, OpB: 11, Expected Result: -10
-# Total tests passed: 8
-# Total tests failed: 3
-# Read from register location 11: 
+# 
+# Verification Result:
+#   Read Pointer: 1
+#   Opcode: 4 (SUB)
+#   Operand A: -11
+#   Operand B: 11
+# 
+# Calculated Result: -22
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 2: 
 #   opcode = 6 (DIV)
 #   operand_a = -6
 #   operand_b = 2
 # 
-#   rezultat = -3
+#  exp_result = -3
 # 
-# Check FAILED: Mismatch between calculated and DUT result. Opcode: DIV, OpA: -6, OpB: 2, Expected: 2147483645, Received: -3
-# Total tests passed: 8
-# Total tests failed: 4
-# Read from register location 12: 
+# 
+# Verification Result:
+#   Read Pointer: 2
+#   Opcode: 6 (DIV)
+#   Operand A: -6
+#   Operand B: 2
+# 
+# Calculated Result: -3
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 3: 
 #   opcode = 0 (ZERO)
-#   operand_a = 11
-#   operand_b = 12
-# 
-#   rezultat = 11
-# 
-# Check FAILED: Mismatch between calculated and DUT result. Opcode: ZERO, OpA: 11, OpB: 12, Expected: 0, Received: 11
-# Total tests passed: 8
-# Total tests failed: 5
-# Read from register location 13: 
-#   opcode = 6 (DIV)
-#   operand_a = 13
+#   operand_a = 0
 #   operand_b = 0
 # 
-#   rezultat = 0
+#  exp_result = 0
 # 
-# Check FAILED: Mismatch between calculated and DUT result. Opcode: DIV, OpA: 13, OpB: 0, Expected: x, Received: 0
-# Total tests passed: 8
-# Total tests failed: 6
-# Read from register location 14: 
-#   opcode = 3 (ADD)
-#   operand_a = 12
-#   operand_b = 5
 # 
-#   rezultat = 17
+# Verification Result:
+#   Read Pointer: 3
+#   Opcode: x ()
+#   Operand A: x
+#   Operand B: x
 # 
-# Check PASSED: Calculated result matches DUT result. Opcode: ADD, OpA: 12, OpB: 5, Expected Result: 17
-# Total tests passed: 9
-# Total tests failed: 6
-# Read from register location 15: 
-#   opcode = 3 (ADD)
-#   operand_a = 6
-#   operand_b = 15
-# 
-#   rezultat = 21
-# 
-# Check PASSED: Calculated result matches DUT result. Opcode: ADD, OpA: 6, OpB: 15, Expected Result: 21
-# Total tests passed: 10
-# Total tests failed: 6
-# Read from register location 16: 
-#   opcode = 0 (ZERO)
-#   operand_a = 15
-#   operand_b = 13
-# 
-#   rezultat = 15
-# 
-# Check FAILED: Mismatch between calculated and DUT result. Opcode: ZERO, OpA: 15, OpB: 13, Expected: 0, Received: 15
-# Total tests passed: 10
-# Total tests failed: 7
-# Read from register location 17: 
-#   opcode = 5 (MULT)
-#   operand_a = 1
-#   operand_b = 15
-# 
-#   rezultat = 15
-# 
-# Check PASSED: Calculated result matches DUT result. Opcode: MULT, OpA: 1, OpB: 15, Expected Result: 15
-# Total tests passed: 11
-# Total tests failed: 7
-# Read from register location 18: 
+# Calculated Result: 0
+# Mismatching Opcode!
+# Mismatching Operand A!
+# Mismatching Operand B!
+# Matching Results!
+# TEST FAILED
+# Read from register location 4: 
 #   opcode = 4 (SUB)
-#   operand_a = -11
-#   operand_b = 11
-# 
-#   rezultat = -22
-# 
-# Check PASSED: Calculated result matches DUT result. Opcode: SUB, OpA: -11, OpB: 11, Expected Result: -22
-# Total tests passed: 12
-# Total tests failed: 7
-# Read from register location 19: 
-#   opcode = 0 (ZERO)
 #   operand_a = -9
-#   operand_b = 13
+#   operand_b = 4
 # 
-#   rezultat = -9
+#  exp_result = -13
 # 
-# Check FAILED: Mismatch between calculated and DUT result. Opcode: ZERO, OpA: -9, OpB: 13, Expected: 0, Received: -9
-# Total tests passed: 12
-# Total tests failed: 8
-# Read from register location 20: 
-#   opcode = 4 (SUB)
-#   operand_a = -13
-#   operand_b = 8
 # 
-#   rezultat = -21
+# Verification Result:
+#   Read Pointer: 4
+#   Opcode: 4 (SUB)
+#   Operand A: -9
+#   Operand B: 4
 # 
-# Check PASSED: Calculated result matches DUT result. Opcode: SUB, OpA: -13, OpB: 8, Expected Result: -21
-# Total tests passed: 13
-# Total tests failed: 8
-# Read from register location 21: 
-#   opcode = 1 (PASSA)
-#   operand_a = 2
-#   operand_b = 14
-# 
-#   rezultat = 2
-# 
-# Check PASSED: Calculated result matches DUT result. Opcode: PASSA, OpA: 2, OpB: 14, Expected Result: 2
-# Total tests passed: 14
-# Total tests failed: 8
-# Read from register location 22: 
-#   opcode = 3 (ADD)
-#   operand_a = -11
-#   operand_b = 1
-# 
-#   rezultat = -10
-# 
-# Check PASSED: Calculated result matches DUT result. Opcode: ADD, OpA: -11, OpB: 1, Expected Result: -10
-# Total tests passed: 15
-# Total tests failed: 8
-# Read from register location 23: 
-#   opcode = 0 (ZERO)
-#   operand_a = -11
-#   operand_b = 15
-# 
-#   rezultat = -11
-# 
-# Check FAILED: Mismatch between calculated and DUT result. Opcode: ZERO, OpA: -11, OpB: 15, Expected: 0, Received: -11
-# Total tests passed: 15
-# Total tests failed: 9
-# Read from register location 24: 
-#   opcode = 2 (PASSB)
-#   operand_a = 13
-#   operand_b = 8
-# 
-#   rezultat = 8
-# 
-# Check PASSED: Calculated result matches DUT result. Opcode: PASSB, OpA: 13, OpB: 8, Expected Result: 8
-# Total tests passed: 16
-# Total tests failed: 9
-# Read from register location 25: 
-#   opcode = 5 (MULT)
-#   operand_a = 1
-#   operand_b = 14
-# 
-#   rezultat = 14
-# 
-# Check PASSED: Calculated result matches DUT result. Opcode: MULT, OpA: 1, OpB: 14, Expected Result: 14
-# Total tests passed: 17
-# Total tests failed: 9
-# Read from register location 26: 
-#   opcode = 1 (PASSA)
-#   operand_a = -2
-#   operand_b = 9
-# 
-#   rezultat = -2
-# 
-# Check PASSED: Calculated result matches DUT result. Opcode: PASSA, OpA: -2, OpB: 9, Expected Result: -2
-# Total tests passed: 18
-# Total tests failed: 9
-# Read from register location 27: 
-#   opcode = 5 (MULT)
-#   operand_a = -15
-#   operand_b = 15
-# 
-#   rezultat = -225
-# 
-# Check PASSED: Calculated result matches DUT result. Opcode: MULT, OpA: -15, OpB: 15, Expected Result: -225
-# Total tests passed: 19
-# Total tests failed: 9
-# Read from register location 28: 
-#   opcode = 5 (MULT)
-#   operand_a = -5
+# Calculated Result: -13
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 5: 
+#   opcode = 7 (MOD)
+#   operand_a = -7
 #   operand_b = 12
 # 
-#   rezultat = -60
+#  exp_result = -7
 # 
-# Check PASSED: Calculated result matches DUT result. Opcode: MULT, OpA: -5, OpB: 12, Expected Result: -60
-# Total tests passed: 20
-# Total tests failed: 9
-# Read from register location 29: 
+# 
+# Verification Result:
+#   Read Pointer: 5
+#   Opcode: 7 (MOD)
+#   Operand A: -7
+#   Operand B: 12
+# 
+# Calculated Result: -7
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 6: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+# 
+#  exp_result = 0
+# 
+# 
+# Verification Result:
+#   Read Pointer: 6
+#   Opcode: x ()
+#   Operand A: x
+#   Operand B: x
+# 
+# Calculated Result: 0
+# Mismatching Opcode!
+# Mismatching Operand A!
+# Mismatching Operand B!
+# Matching Results!
+# TEST FAILED
+# Read from register location 7: 
+#   opcode = 5 (MULT)
+#   operand_a = 1
+#   operand_b = 15
+# 
+#  exp_result = 15
+# 
+# 
+# Verification Result:
+#   Read Pointer: 7
+#   Opcode: 5 (MULT)
+#   Operand A: 1
+#   Operand B: 15
+# 
+# Calculated Result: 15
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 8: 
+#   opcode = 7 (MOD)
+#   operand_a = 1
+#   operand_b = 1
+# 
+#  exp_result = 0
+# 
+# 
+# Verification Result:
+#   Read Pointer: 8
+#   Opcode: 7 (MOD)
+#   Operand A: 1
+#   Operand B: 1
+# 
+# Calculated Result: 0
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 9: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+# 
+#  exp_result = 0
+# 
+# 
+# Verification Result:
+#   Read Pointer: 9
+#   Opcode: x ()
+#   Operand A: x
+#   Operand B: x
+# 
+# Calculated Result: 0
+# Mismatching Opcode!
+# Mismatching Operand A!
+# Mismatching Operand B!
+# Matching Results!
+# TEST FAILED
+# Read from register location 10: 
+#   opcode = 1 (PASSA)
+#   operand_a = -4
+#   operand_b = 1
+# 
+#  exp_result = -4
+# 
+# 
+# Verification Result:
+#   Read Pointer: 10
+#   Opcode: 1 (PASSA)
+#   Operand A: -4
+#   Operand B: 1
+# 
+# Calculated Result: -4
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 11: 
+#   opcode = 1 (PASSA)
+#   operand_a = -8
+#   operand_b = 12
+# 
+#  exp_result = -8
+# 
+# 
+# Verification Result:
+#   Read Pointer: 11
+#   Opcode: 1 (PASSA)
+#   Operand A: -8
+#   Operand B: 12
+# 
+# Calculated Result: -8
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 12: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+# 
+#  exp_result = 0
+# 
+# 
+# Verification Result:
+#   Read Pointer: 12
+#   Opcode: x ()
+#   Operand A: x
+#   Operand B: x
+# 
+# Calculated Result: 0
+# Mismatching Opcode!
+# Mismatching Operand A!
+# Mismatching Operand B!
+# Matching Results!
+# TEST FAILED
+# Read from register location 13: 
+#   opcode = 0 (ZERO)
+#   operand_a = -12
+#   operand_b = 3
+# 
+#  exp_result = 0
+# 
+# 
+# Verification Result:
+#   Read Pointer: 13
+#   Opcode: 0 (ZERO)
+#   Operand A: -12
+#   Operand B: 3
+# 
+# Calculated Result: 0
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 14: 
 #   opcode = 3 (ADD)
-#   operand_a = -9
-#   operand_b = 5
+#   operand_a = -2
+#   operand_b = 4
 # 
-#   rezultat = -4
+#  exp_result = 2
 # 
-# Check PASSED: Calculated result matches DUT result. Opcode: ADD, OpA: -9, OpB: 5, Expected Result: -4
-# Total tests passed: 21
-# Total tests failed: 9
-# Read from register location 30: 
+# 
+# Verification Result:
+#   Read Pointer: 14
+#   Opcode: 3 (ADD)
+#   Operand A: -2
+#   Operand B: 4
+# 
+# Calculated Result: 2
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 15: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+# 
+#  exp_result = 0
+# 
+# 
+# Verification Result:
+#   Read Pointer: 15
+#   Opcode: x ()
+#   Operand A: x
+#   Operand B: x
+# 
+# Calculated Result: 0
+# Mismatching Opcode!
+# Mismatching Operand A!
+# Mismatching Operand B!
+# Matching Results!
+# TEST FAILED
+# Read from register location 16: 
 #   opcode = 4 (SUB)
 #   operand_a = 0
 #   operand_b = 14
 # 
-#   rezultat = -14
+#  exp_result = -14
 # 
-# Check PASSED: Calculated result matches DUT result. Opcode: SUB, OpA: 0, OpB: 14, Expected Result: -14
-# Total tests passed: 22
-# Total tests failed: 9
 # 
-# Total tests passed: 22
-# Total tests failed: 9
+# Verification Result:
+#   Read Pointer: 16
+#   Opcode: 4 (SUB)
+#   Operand A: 0
+#   Operand B: 14
+# 
+# Calculated Result: -14
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 17: 
+#   opcode = 0 (ZERO)
+#   operand_a = -11
+#   operand_b = 15
+# 
+#  exp_result = 0
+# 
+# 
+# Verification Result:
+#   Read Pointer: 17
+#   Opcode: 0 (ZERO)
+#   Operand A: -11
+#   Operand B: 15
+# 
+# Calculated Result: 0
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 18: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+# 
+#  exp_result = 0
+# 
+# 
+# Verification Result:
+#   Read Pointer: 18
+#   Opcode: x ()
+#   Operand A: x
+#   Operand B: x
+# 
+# Calculated Result: 0
+# Mismatching Opcode!
+# Mismatching Operand A!
+# Mismatching Operand B!
+# Matching Results!
+# TEST FAILED
+# Read from register location 19: 
+#   opcode = 4 (SUB)
+#   operand_a = -13
+#   operand_b = 8
+# 
+#  exp_result = -21
+# 
+# 
+# Verification Result:
+#   Read Pointer: 19
+#   Opcode: 4 (SUB)
+#   Operand A: -13
+#   Operand B: 8
+# 
+# Calculated Result: -21
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 20: 
+#   opcode = 3 (ADD)
+#   operand_a = 9
+#   operand_b = 7
+# 
+#  exp_result = 16
+# 
+# 
+# Verification Result:
+#   Read Pointer: 20
+#   Opcode: 3 (ADD)
+#   Operand A: 9
+#   Operand B: 7
+# 
+# Calculated Result: 16
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 21: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+# 
+#  exp_result = 0
+# 
+# 
+# Verification Result:
+#   Read Pointer: 21
+#   Opcode: x ()
+#   Operand A: x
+#   Operand B: x
+# 
+# Calculated Result: 0
+# Mismatching Opcode!
+# Mismatching Operand A!
+# Mismatching Operand B!
+# Matching Results!
+# TEST FAILED
+# Read from register location 22: 
+#   opcode = 1 (PASSA)
+#   operand_a = -15
+#   operand_b = 1
+# 
+#  exp_result = -15
+# 
+# 
+# Verification Result:
+#   Read Pointer: 22
+#   Opcode: 1 (PASSA)
+#   Operand A: -15
+#   Operand B: 1
+# 
+# Calculated Result: -15
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 23: 
+#   opcode = 1 (PASSA)
+#   operand_a = 3
+#   operand_b = 14
+# 
+#  exp_result = 3
+# 
+# 
+# Verification Result:
+#   Read Pointer: 23
+#   Opcode: 1 (PASSA)
+#   Operand A: 3
+#   Operand B: 14
+# 
+# Calculated Result: 3
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 24: 
+#   opcode = 5 (MULT)
+#   operand_a = -9
+#   operand_b = 1
+# 
+#  exp_result = -9
+# 
+# 
+# Verification Result:
+#   Read Pointer: 24
+#   Opcode: 5 (MULT)
+#   Operand A: -9
+#   Operand B: 1
+# 
+# Calculated Result: -9
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 25: 
+#   opcode = 1 (PASSA)
+#   operand_a = 12
+#   operand_b = 7
+# 
+#  exp_result = 12
+# 
+# 
+# Verification Result:
+#   Read Pointer: 25
+#   Opcode: 1 (PASSA)
+#   Operand A: 12
+#   Operand B: 7
+# 
+# Calculated Result: 12
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 26: 
+#   opcode = 4 (SUB)
+#   operand_a = 5
+#   operand_b = 3
+# 
+#  exp_result = 2
+# 
+# 
+# Verification Result:
+#   Read Pointer: 26
+#   Opcode: 4 (SUB)
+#   Operand A: 5
+#   Operand B: 3
+# 
+# Calculated Result: 2
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 27: 
+#   opcode = 4 (SUB)
+#   operand_a = 14
+#   operand_b = 9
+# 
+#  exp_result = 5
+# 
+# 
+# Verification Result:
+#   Read Pointer: 27
+#   Opcode: 4 (SUB)
+#   Operand A: 14
+#   Operand B: 9
+# 
+# Calculated Result: 5
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 28: 
+#   opcode = 1 (PASSA)
+#   operand_a = 2
+#   operand_b = 14
+# 
+#  exp_result = 2
+# 
+# 
+# Verification Result:
+#   Read Pointer: 28
+#   Opcode: 1 (PASSA)
+#   Operand A: 2
+#   Operand B: 14
+# 
+# Calculated Result: 2
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 29: 
+#   opcode = 7 (MOD)
+#   operand_a = -15
+#   operand_b = 8
+# 
+#  exp_result = -7
+# 
+# 
+# Verification Result:
+#   Read Pointer: 29
+#   Opcode: 7 (MOD)
+#   Operand A: -15
+#   Operand B: 8
+# 
+# Calculated Result: -7
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 30: 
+#   opcode = 2 (PASSB)
+#   operand_a = 8
+#   operand_b = 10
+# 
+#  exp_result = 10
+# 
+# 
+# Verification Result:
+#   Read Pointer: 30
+#   Opcode: 2 (PASSB)
+#   Operand A: 8
+#   Operand B: 10
+# 
+# Calculated Result: 10
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 31: 
+#   opcode = 2 (PASSB)
+#   operand_a = -4
+#   operand_b = 8
+# 
+#  exp_result = 8
+# 
+# 
+# Verification Result:
+#   Read Pointer: 31
+#   Opcode: 2 (PASSB)
+#   Operand A: -4
+#   Operand B: 8
+# 
+# Calculated Result: 8
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 0: 
+#   opcode = x ()
+#   operand_a = x
+#   operand_b = x
+# 
+#  exp_result = 0
+# 
+# 
+# Verification Result:
+#   Read Pointer: 0
+#   Opcode: x ()
+#   Operand A: x
+#   Operand B: x
+# 
+# Calculated Result: 0
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 1: 
+#   opcode = 4 (SUB)
+#   operand_a = -11
+#   operand_b = 11
+# 
+#  exp_result = -22
+# 
+# 
+# Verification Result:
+#   Read Pointer: 1
+#   Opcode: 4 (SUB)
+#   Operand A: -11
+#   Operand B: 11
+# 
+# Calculated Result: -22
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 2: 
+#   opcode = 6 (DIV)
+#   operand_a = -6
+#   operand_b = 2
+# 
+#  exp_result = -3
+# 
+# 
+# Verification Result:
+#   Read Pointer: 2
+#   Opcode: 6 (DIV)
+#   Operand A: -6
+#   Operand B: 2
+# 
+# Calculated Result: -3
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 3: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+# 
+#  exp_result = 0
+# 
+# 
+# Verification Result:
+#   Read Pointer: 3
+#   Opcode: x ()
+#   Operand A: x
+#   Operand B: x
+# 
+# Calculated Result: 0
+# Mismatching Opcode!
+# Mismatching Operand A!
+# Mismatching Operand B!
+# Matching Results!
+# TEST FAILED
+# Read from register location 4: 
+#   opcode = 4 (SUB)
+#   operand_a = -9
+#   operand_b = 4
+# 
+#  exp_result = -13
+# 
+# 
+# Verification Result:
+#   Read Pointer: 4
+#   Opcode: 4 (SUB)
+#   Operand A: -9
+#   Operand B: 4
+# 
+# Calculated Result: -13
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 5: 
+#   opcode = 7 (MOD)
+#   operand_a = -7
+#   operand_b = 12
+# 
+#  exp_result = -7
+# 
+# 
+# Verification Result:
+#   Read Pointer: 5
+#   Opcode: 7 (MOD)
+#   Operand A: -7
+#   Operand B: 12
+# 
+# Calculated Result: -7
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 6: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+# 
+#  exp_result = 0
+# 
+# 
+# Verification Result:
+#   Read Pointer: 6
+#   Opcode: x ()
+#   Operand A: x
+#   Operand B: x
+# 
+# Calculated Result: 0
+# Mismatching Opcode!
+# Mismatching Operand A!
+# Mismatching Operand B!
+# Matching Results!
+# TEST FAILED
+# Read from register location 7: 
+#   opcode = 5 (MULT)
+#   operand_a = 1
+#   operand_b = 15
+# 
+#  exp_result = 15
+# 
+# 
+# Verification Result:
+#   Read Pointer: 7
+#   Opcode: 5 (MULT)
+#   Operand A: 1
+#   Operand B: 15
+# 
+# Calculated Result: 15
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# 
+# -------- Test Summary --------
+# Total number of tests: 40
+# Number of failed tests: 9
+# Number of passed tests: 31
+# Pass percentage: 77.50%
+# Fail percentage: 22.50%
+# Overall Status: Good
+# -------------------------------
 # 
 # ***********************************************************
 # ***  THIS IS A SELF-CHECKING TESTBENCH.  YOU  ***
@@ -600,7 +1043,7 @@
 # ***  MATCH THE INPUT VALUES FOR EACH REGISTER LOCATION  ***
 # ***********************************************************
 # 
-# ** Note: $finish    : ../lab01_testbench-interface/instr_register_test.sv(80)
-#    Time: 854 ns  Iteration: 1  Instance: /top/test
-# End time: 09:23:01 on Apr 08,2024, Elapsed time: 0:00:01
+# ** Note: $finish    : ../lab01_testbench-interface/instr_register_test.sv(90)
+#    Time: 844 ns  Iteration: 1  Instance: /top/test
+# End time: 00:06:39 on Apr 15,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0

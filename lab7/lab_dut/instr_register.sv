@@ -30,22 +30,23 @@ import instr_register_pkg::*;  // user-defined types are defined in instr_regist
     end
     else if (load_en) begin //adaug switch in functie de opcode
       case (opcode)
-        ZERO: iw_reg[write_pointer] = '{opcode,operand_a,operand_b, operand_a};
-        PASSA: iw_reg[write_pointer] = '{opcode,operand_a,operand_b, operand_a};
-        PASSB: iw_reg[write_pointer] = '{opcode,operand_a,operand_b, operand_b};
-        ADD: iw_reg[write_pointer] = '{opcode,operand_a,operand_b, operand_a + operand_b};
-        SUB: iw_reg[write_pointer] = '{opcode,operand_a,operand_b, operand_a - operand_b};
-        MULT: iw_reg[write_pointer] = '{opcode,operand_a,operand_b, operand_a * operand_b};
-        //DIV: iw_reg[write_pointer] = '{opcode,operand_a,operand_b, operand_a / operand_b}; modif 11 martie BI
-        DIV: if (operand_b == 0) 
-                iw_reg[write_pointer] = '{opcode,operand_a,operand_b,'b0};
-              else iw_reg[write_pointer] = '{opcode,operand_a,operand_b, operand_a / operand_b};
-        MOD: iw_reg[write_pointer] = '{opcode,operand_a,operand_b, operand_a % operand_b};
-        default: iw_reg[write_pointer] = '{opc:ZERO,default:0};
+      PASSA : iw_reg[write_pointer] = '{opcode, operand_a, operand_b, operand_a};
+      PASSB : iw_reg[write_pointer] = '{opcode, operand_a, operand_b, operand_b};
+      ADD   : iw_reg[write_pointer] = '{opcode, operand_a, operand_b, $signed(operand_a + operand_b)};
+      SUB   : iw_reg[write_pointer] = '{opcode, operand_a, operand_b, $signed(operand_a - operand_b)};
+      MULT  : iw_reg[write_pointer] = '{opcode, operand_a, operand_b, $signed(operand_a * operand_b)};
+      // DIV   : iw_reg[write_pointer] = '{opcode, operand_a, operand_b, $signed(operand_a / operand_b)}; - 11.03.2024 Cristea Florinela
+      DIV   : if(operand_b == 0)
+                iw_reg[write_pointer] = '{opcode, operand_a, operand_b, 'b0};
+              else 
+                iw_reg[write_pointer] = '{opcode, operand_a, operand_b, $signed(operand_a / operand_b)};
+
+      MOD   : iw_reg[write_pointer] = '{opcode, operand_a, operand_b, $signed(operand_a % operand_b)};
+      default : iw_reg[write_pointer] = '{opcode, operand_a, operand_b, 'b0};
       endcase //la overflow truncheaza valorile; vedem ca wp e pe 5 de biti pt ca avem 32 de elem in array
     end
 
-  // read from the register
+  // read from the register - asignam unei valori de iesire
   assign instruction_word = iw_reg[read_pointer];  // continuously read from register
 
 // compile with +define+FORCE_LOAD_ERROR to inject a functional bug for verification to catch
