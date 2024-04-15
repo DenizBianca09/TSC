@@ -9,6 +9,6 @@ cd ../sim
 ::vsim -gui -do "do run.do %1 %2 %3 %4"
 ::vsim -c -do "do run.do %1 %2 %3 %4"
 ::vsim -%5 -do "do run.do %1 %2 %3 %4 %5"
-vsim -%5 -do "do run.do %1 %2 %3 %4 %6"
+vsim -%5 -do "do run.do %1 %2 %3 %4 %6 %7"
 cd ../tools
 

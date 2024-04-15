@@ -23,7 +23,7 @@ if {$compile_on || [batch_mode] == 0} {
 
 # Load project
 # eval vsim -novopt -quiet -nocoverage +notimingchecks +nowarnTSCALE -sva top
-eval vsim -novopt -quiet -nocoverage +notimingchecks +nowarnTSCALE -GWRITE_NR=$1 -GRD_NR=$2 -GWR_ORDER=$3 -GRD_ORDER=$4 -GNAME_OF_TEST=$5 -sva top
+eval vsim -novopt -quiet -nocoverage +notimingchecks +nowarnTSCALE -GWRITE_NR=$1 -GRD_NR=$2 -GWR_ORDER=$3 -GRD_ORDER=$4 -GNAME_OF_TEST=$5 -GSEED_VAL=$6 -sva top
 # eval vsim -novopt -quiet -coverage +code=bcesft +notimingchecks +nowarnTSCALE -sva top
 
 # Run log/wave commands
