@@ -940,3 +940,5 @@
 # Simulation Breakpoint: 1
 # Break in Module instr_register_test at ../lab01_testbench-interface/instr_register_test.sv line 94
 # MACRO ./run.do PAUSED at line 49
+# End time: 09:24:51 on Apr 15,2024, Elapsed time: 0:02:29
+# Errors: 0, Warnings: 0
