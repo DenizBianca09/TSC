@@ -1,6 +1,6 @@
 # 1
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
-# Start time: 08:47:06 on Apr 15,2024
+# Start time: 16:06:04 on Apr 16,2024
 # vlog -sv -timescale 1ps/1ps -work work -f sources.txt 
 # -- Compiling package instr_register_pkg
 # -- Compiling module instr_register
@@ -10,10 +10,10 @@
 # 
 # Top level modules:
 # 	top
-# End time: 08:47:06 on Apr 15,2024, Elapsed time: 0:00:00
+# End time: 16:06:04 on Apr 16,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -novopt -quiet -nocoverage "+notimingchecks" "+nowarnTSCALE" -sva top -GNAME_OF_TEST=case5 -GWR_ORDER=1 -GRD_ORDER=1 -GRD_NR=32 -GWRITE_NR=50 -GSEED_VAL=1784043 
-# Start time: 08:47:06 on Apr 15,2024
+# Start time: 16:06:04 on Apr 16,2024
 # 
 # 
 # ***********************************************************
@@ -933,7 +933,7 @@
 # ***  MATCH THE INPUT VALUES FOR EACH REGISTER LOCATION  ***
 # ***********************************************************
 # 
-# ** Note: $finish    : ../lab01_testbench-interface/instr_register_test.sv(93)
+# ** Note: $finish    : ../lab01_testbench-interface/instr_register_test.sv(95)
 #    Time: 864 ns  Iteration: 1  Instance: /top/test
-# End time: 08:47:06 on Apr 15,2024, Elapsed time: 0:00:00
+# End time: 16:06:04 on Apr 16,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0

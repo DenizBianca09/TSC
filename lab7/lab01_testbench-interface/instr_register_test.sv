@@ -55,6 +55,8 @@ module instr_register_test
     reset_n = 1'b0;
     repeat (2) @(posedge clk);
     reset_n = 1'b1;
+    foreach (iw_reg_test[i])        // resetam iw_reg_test
+    iw_reg_test[i] = '{opc:ZERO,default:0};
 
     // Writing values to register stack
     $display("\nWriting values to register stack...");
@@ -76,7 +78,6 @@ module instr_register_test
         2: read_pointer = 31 - (i % 32);
      endcase 
       @(negedge clk) print_results;
-      iw_reg[i] = '{opc:ZERO,default:0};
       check_result;
     end
 
@@ -206,7 +207,7 @@ module instr_register_test
   iw_reg_test[write_pointer].opc = opcode;
   iw_reg_test[write_pointer].op_a = operand_a;
   iw_reg_test[write_pointer].op_b = operand_b;
-  iw_reg_test[write_pointer].exp_result = 1'b0; // Or whatever the default should be
+  iw_reg_test[write_pointer].exp_result = 1'b0; 
   endfunction: save_data
 
 
@@ -245,7 +246,7 @@ function void write_file;
   int fd;
 
   fd = $fopen("../reports/regression_transcript/regression_status.txt", "a");
-  if (pass == WRITE_NR) begin
+  if (pass == RD_NR) begin
     $fdisplay(fd, "%s : passed", NAME_OF_TEST);
   end
   else begin

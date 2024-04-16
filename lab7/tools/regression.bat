@@ -8,7 +8,7 @@
 ::call run_test.bat 40 40 2 0 c DEC_INC
 ::call run_test.bat 40 40 1 0 c RAND_INC  
 
-call run_test.bat 50 32 1 1 gui case1 739161
+call run_test.bat 50 50 1 1 c case1 739161
 call run_test.bat 50 32 1 1 c case2 1072245
 call run_test.bat 50 32 1 1 c case3 410461
 call run_test.bat 50 32 1 1 c case4 164147

@@ -1,7 +1,7 @@
 # 1
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
-# Start time: 09:22:21 on Apr 15,2024
-# vlog -reportprogress 300 -sv -timescale 1ps/1ps -work work -f sources.txt 
+# Start time: 16:05:59 on Apr 16,2024
+# vlog -sv -timescale 1ps/1ps -work work -f sources.txt 
 # -- Compiling package instr_register_pkg
 # -- Compiling module instr_register
 # -- Importing package instr_register_pkg
@@ -10,10 +10,10 @@
 # 
 # Top level modules:
 # 	top
-# End time: 09:22:21 on Apr 15,2024, Elapsed time: 0:00:00
+# End time: 16:05:59 on Apr 16,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim -novopt -quiet -nocoverage "+notimingchecks" "+nowarnTSCALE" -sva top -GNAME_OF_TEST=case1 -GWR_ORDER=1 -GRD_ORDER=1 -GRD_NR=32 -GWRITE_NR=50 -GSEED_VAL=739161 
-# Start time: 09:22:22 on Apr 15,2024
+# vsim -novopt -quiet -nocoverage "+notimingchecks" "+nowarnTSCALE" -sva top -GNAME_OF_TEST=case1 -GWR_ORDER=1 -GRD_ORDER=1 -GRD_NR=50 -GWRITE_NR=50 -GSEED_VAL=739161 
+# Start time: 16:05:59 on Apr 16,2024
 # 
 # 
 # ***********************************************************
@@ -307,16 +307,16 @@
 # 
 # Verification Result:
 #   Read Pointer: 19
-#   Opcode: x ()
-#   Operand A: x
-#   Operand B: x
+#   Opcode: 0 (ZERO)
+#   Operand A: 0
+#   Operand B: 0
 # 
-# Calculated Result: 11
-# Mismatching Opcode!
-# Mismatching Operand A!
-# Mismatching Operand B!
-# Mismatching Results!
-# TEST FAILED
+# Calculated Result: 0
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
 # Read from register location 10: 
 #   opcode = 4 (SUB)
 #   operand_a = 8
@@ -917,14 +917,374 @@
 # Matching Operand B!
 # Matching Results!
 # TEST PASSED
+# Read from register location 24: 
+#   opcode = 5 (MULT)
+#   operand_a = -8
+#   operand_b = 8
+# 
+#  exp_result = -64
+# 
+# 
+# Verification Result:
+#   Read Pointer: 24
+#   Opcode: 5 (MULT)
+#   Operand A: -8
+#   Operand B: 8
+# 
+# Calculated Result: -64
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 24: 
+#   opcode = 5 (MULT)
+#   operand_a = -8
+#   operand_b = 8
+# 
+#  exp_result = -64
+# 
+# 
+# Verification Result:
+#   Read Pointer: 24
+#   Opcode: 5 (MULT)
+#   Operand A: -8
+#   Operand B: 8
+# 
+# Calculated Result: -64
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 28: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+# 
+#  exp_result = 0
+# 
+# 
+# Verification Result:
+#   Read Pointer: 28
+#   Opcode: 0 (ZERO)
+#   Operand A: 0
+#   Operand B: 0
+# 
+# Calculated Result: 0
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 23: 
+#   opcode = 4 (SUB)
+#   operand_a = -12
+#   operand_b = 7
+# 
+#  exp_result = -19
+# 
+# 
+# Verification Result:
+#   Read Pointer: 23
+#   Opcode: 4 (SUB)
+#   Operand A: -12
+#   Operand B: 7
+# 
+# Calculated Result: -19
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 5: 
+#   opcode = 4 (SUB)
+#   operand_a = 8
+#   operand_b = 2
+# 
+#  exp_result = 6
+# 
+# 
+# Verification Result:
+#   Read Pointer: 5
+#   Opcode: 4 (SUB)
+#   Operand A: 8
+#   Operand B: 2
+# 
+# Calculated Result: 6
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 9: 
+#   opcode = 0 (ZERO)
+#   operand_a = 10
+#   operand_b = 8
+# 
+#  exp_result = 0
+# 
+# 
+# Verification Result:
+#   Read Pointer: 9
+#   Opcode: 0 (ZERO)
+#   Operand A: 10
+#   Operand B: 8
+# 
+# Calculated Result: 0
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 16: 
+#   opcode = 1 (PASSA)
+#   operand_a = -12
+#   operand_b = 13
+# 
+#  exp_result = -12
+# 
+# 
+# Verification Result:
+#   Read Pointer: 16
+#   Opcode: 1 (PASSA)
+#   Operand A: -12
+#   Operand B: 13
+# 
+# Calculated Result: -12
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 23: 
+#   opcode = 4 (SUB)
+#   operand_a = -12
+#   operand_b = 7
+# 
+#  exp_result = -19
+# 
+# 
+# Verification Result:
+#   Read Pointer: 23
+#   Opcode: 4 (SUB)
+#   Operand A: -12
+#   Operand B: 7
+# 
+# Calculated Result: -19
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 9: 
+#   opcode = 0 (ZERO)
+#   operand_a = 10
+#   operand_b = 8
+# 
+#  exp_result = 0
+# 
+# 
+# Verification Result:
+#   Read Pointer: 9
+#   Opcode: 0 (ZERO)
+#   Operand A: 10
+#   Operand B: 8
+# 
+# Calculated Result: 0
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 11: 
+#   opcode = 7 (MOD)
+#   operand_a = -8
+#   operand_b = 9
+# 
+#  exp_result = -8
+# 
+# 
+# Verification Result:
+#   Read Pointer: 11
+#   Opcode: 7 (MOD)
+#   Operand A: -8
+#   Operand B: 9
+# 
+# Calculated Result: -8
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 26: 
+#   opcode = 1 (PASSA)
+#   operand_a = -9
+#   operand_b = 4
+# 
+#  exp_result = -9
+# 
+# 
+# Verification Result:
+#   Read Pointer: 26
+#   Opcode: 1 (PASSA)
+#   Operand A: -9
+#   Operand B: 4
+# 
+# Calculated Result: -9
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 31: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+# 
+#  exp_result = 0
+# 
+# 
+# Verification Result:
+#   Read Pointer: 31
+#   Opcode: 0 (ZERO)
+#   Operand A: 0
+#   Operand B: 0
+# 
+# Calculated Result: 0
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 13: 
+#   opcode = 1 (PASSA)
+#   operand_a = -9
+#   operand_b = 11
+# 
+#  exp_result = -9
+# 
+# 
+# Verification Result:
+#   Read Pointer: 13
+#   Opcode: 1 (PASSA)
+#   Operand A: -9
+#   Operand B: 11
+# 
+# Calculated Result: -9
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 30: 
+#   opcode = 6 (DIV)
+#   operand_a = 9
+#   operand_b = 14
+# 
+#  exp_result = 0
+# 
+# 
+# Verification Result:
+#   Read Pointer: 30
+#   Opcode: 6 (DIV)
+#   Operand A: 9
+#   Operand B: 14
+# 
+# Calculated Result: 0
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 2: 
+#   opcode = 1 (PASSA)
+#   operand_a = 11
+#   operand_b = 8
+# 
+#  exp_result = 11
+# 
+# 
+# Verification Result:
+#   Read Pointer: 2
+#   Opcode: 1 (PASSA)
+#   Operand A: 11
+#   Operand B: 8
+# 
+# Calculated Result: 11
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 15: 
+#   opcode = 5 (MULT)
+#   operand_a = 0
+#   operand_b = 4
+# 
+#  exp_result = 0
+# 
+# 
+# Verification Result:
+#   Read Pointer: 15
+#   Opcode: 5 (MULT)
+#   Operand A: 0
+#   Operand B: 4
+# 
+# Calculated Result: 0
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 9: 
+#   opcode = 0 (ZERO)
+#   operand_a = 10
+#   operand_b = 8
+# 
+#  exp_result = 0
+# 
+# 
+# Verification Result:
+#   Read Pointer: 9
+#   Opcode: 0 (ZERO)
+#   Operand A: 10
+#   Operand B: 8
+# 
+# Calculated Result: 0
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
+# Read from register location 10: 
+#   opcode = 4 (SUB)
+#   operand_a = 8
+#   operand_b = 8
+# 
+#  exp_result = 0
+# 
+# 
+# Verification Result:
+#   Read Pointer: 10
+#   Opcode: 4 (SUB)
+#   Operand A: 8
+#   Operand B: 8
+# 
+# Calculated Result: 0
+# Matching Opcode!
+# Matching Operand A!
+# Matching Operand B!
+# Matching Results!
+# TEST PASSED
 # 
 # -------- Test Summary --------
 # Total number of tests: 50
-# Number of failed tests: 1
-# Number of passed tests: 31
-# Pass percentage: 62.00%
-# Fail percentage: 2.00%
-# Overall Status: Satisfactory
+# Number of failed tests: 0
+# Number of passed tests: 50
+# Pass percentage: 100.00%
+# Fail percentage: 0.00%
+# Overall Status: Excellent
 # -------------------------------
 # 
 # ***********************************************************
@@ -933,12 +1293,7 @@
 # ***  MATCH THE INPUT VALUES FOR EACH REGISTER LOCATION  ***
 # ***********************************************************
 # 
-# ** Note: $finish    : ../lab01_testbench-interface/instr_register_test.sv(94)
-#    Time: 864 ns  Iteration: 1  Instance: /top/test
-# 1
-# Break in Module instr_register_test at ../lab01_testbench-interface/instr_register_test.sv line 94
-# Simulation Breakpoint: 1
-# Break in Module instr_register_test at ../lab01_testbench-interface/instr_register_test.sv line 94
-# MACRO ./run.do PAUSED at line 49
-# End time: 09:24:51 on Apr 15,2024, Elapsed time: 0:02:29
+# ** Note: $finish    : ../lab01_testbench-interface/instr_register_test.sv(95)
+#    Time: 1044 ns  Iteration: 1  Instance: /top/test
+# End time: 16:05:59 on Apr 16,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
